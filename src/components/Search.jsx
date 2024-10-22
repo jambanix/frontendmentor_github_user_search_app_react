@@ -8,9 +8,9 @@ export const Search = () => {
 
     return (
         <div className="flex relative items-center">
-            <input type="text" placeholder="Search Github Username" className={`basis-full pl-20 bg-${theme}-body`}/>
-            <Icon containerClassName="absolute left-10" iconType="search"/>
-            <Button className="absolute right-0 -ml-4">Search</Button>
+            <input type="text" placeholder="Search Github Username" className={`basis-full rounded-lg px-16 py-5 ${theme === "dark" ? "bg-dark-body" : "bg-light-body"}`}/>
+            <Icon containerClassName="absolute left-6" iconType="search"/>
+            <Button className="absolute right-2 bg-blue py-3 px-6 text-white">Search</Button>
         </div>
     )
 }

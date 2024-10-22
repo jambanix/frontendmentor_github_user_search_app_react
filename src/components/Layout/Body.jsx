@@ -1,13 +1,16 @@
 import { Search } from "../Search";
+import { UserContainer } from "./UserContainer";
 
 export const Body = () => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-6 w-full">
       <section>
         <Search />
       </section>
 
-      <section></section>
+      <section>
+		<UserContainer />
+	  </section>
     </div>
   );
 };
