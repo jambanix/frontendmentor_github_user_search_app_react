@@ -5,6 +5,7 @@ import { Header } from "./components/Layout/Header";
 import { ThemeProvider } from "./context/ThemeProvider";
 
 function App() {
+
   return (
     <>
     <ThemeProvider>

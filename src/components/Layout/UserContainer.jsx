@@ -4,7 +4,7 @@ import { UserDescription } from "../User/UserDescription";
 import { UserSocials } from "../User/UserSocials";
 import { UserStats } from "../User/UserStats";
 
-export const UserContainer= () => {
+export const UserContainer= ({user}) => {
 
     const {theme} = useTheme();
 
