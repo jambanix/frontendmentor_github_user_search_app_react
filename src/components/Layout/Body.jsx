@@ -1,7 +1,6 @@
 import { Search } from "../Search";
 import { UserContainer } from "./UserContainer";
 import { useState } from "react";
-import { useEffect } from "react";
 
 export const Body = () => {
 
@@ -11,6 +10,7 @@ export const Body = () => {
   const [user, setUser] = useState([]);
 
   const apiRequest = (username) => {
+   
       const URL = `${API_BASE}/${username}`
       const headers = new Headers({
           "Accept": "application/vnd.github+json",
@@ -23,14 +23,14 @@ export const Body = () => {
       .then(response => response.json())
       .then(data => setUser(data))
       .catch(setUser([]))
-  }
 
-  useEffect(() => {
-      if (user !== "") apiRequest(user);
-  }, [])
+      console.log(user);
+  
+}
 
   const handleClick = (target) => {
     apiRequest(target);
+    
   }
 
 
