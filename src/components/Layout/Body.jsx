@@ -19,7 +19,11 @@ export const Body = () => {
 
     fetch(URL, headers)
       .then((response) => response.json())
-      .then((data) => setUser(data))
+      .then((data) => {
+        let date = new Date(data.created_at);
+        date = date.toLocaleDateString("en-GB");
+        setUser(({...data, created_at: date}));
+      })
       .catch(setUser([]));
   };
 
