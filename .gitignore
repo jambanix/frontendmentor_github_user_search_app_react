@@ -26,3 +26,5 @@ dist-ssr
 #Env
 .env
 *.fig
+# Local Netlify folder
+.netlify
