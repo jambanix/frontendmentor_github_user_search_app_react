@@ -15,7 +15,12 @@ export const UserContainer = ({ user }) => {
       }`}
     >
       <div className="grid grid-cols-[min-content] sm:grid-cols-[min-content_1fr] gap-6 sm:gap-12">
-        <UserAvatar {...user} className={`col-start-1 ${theme === "dark" ? "bg-dark-main" : "bg-light-main"}`} />
+        <UserAvatar
+          {...user}
+          className={`col-start-1 ${
+            theme === "dark" ? "bg-dark-main" : "bg-light-main"
+          }`}
+        />
 
         <article className="sm:col-start-2 grid grid-cols-1 sm:grid-cols-2]">
           <div>

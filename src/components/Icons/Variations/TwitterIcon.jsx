@@ -1,4 +1,4 @@
-export const TwitterIcon = ({ containerClassName, fill}) => {
+export const TwitterIcon = ({ containerClassName, fill }) => {
   return (
     <div className={containerClassName}>
       <svg height="22" width="22" xmlns="http://www.w3.org/2000/svg">

@@ -24,22 +24,25 @@ export const Body = () => {
         let date;
         try {
           date = new Date(data.created_at);
-          date = date.toLocaleDateString("default", {day: "2-digit", month: "long", year: "numeric"});
+          date = date.toLocaleDateString("default", {
+            day: "2-digit",
+            month: "long",
+            year: "numeric",
+          });
+        } catch {
+          date = null;
         }
-        catch {
-          date = null
-        }
-        
-        date === "Invalid Date" ? date = null : null;
+
+        date === "Invalid Date" ? (date = null) : null;
         data.status === "404" ? setError(true) : setError(false);
-        setUser(({...data, created_at: date}));
+        setUser({ ...data, created_at: date });
       })
       .catch(setUser([]));
   };
 
   useEffect(() => {
     apiRequest("jambanix");
-  }, [])
+  }, []);
 
   const handleClick = (target) => {
     apiRequest(target);
@@ -48,7 +51,7 @@ export const Body = () => {
   return (
     <div className="flex flex-col gap-4 w-full md:h-[481px]">
       <section>
-        <Search callbackFn={handleClick} error={error}/>
+        <Search callbackFn={handleClick} error={error} />
       </section>
 
       <section className="h-full">
