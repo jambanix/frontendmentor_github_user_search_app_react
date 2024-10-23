@@ -15,7 +15,7 @@ export default {
       "light-blue": "#5da9fc",
       "ivory": "#f6f8ff",
       "grey": "#697c9a"
-    }
+    },
    }
   },
   plugins: [],

@@ -12,7 +12,7 @@ export const ThemeToggler = () => {
 
     return (
         <div className="flex gap-2 cursor-pointer items-center" onClick={toggleTheme}>
-            <h4 className={`${theme === "dark" ? "text-white" : "text-black"}`}>{title.toUpperCase()}</h4>
+            <h4 className={`${theme === "dark" ? "text-ivory hover:text-grey" : "text-grey hover:text-black"}`}>{title.toUpperCase()}</h4>
             <Icon iconType={icon} />
         </div>
     )
