@@ -23,9 +23,6 @@ export const Body = () => {
       .then(response => response.json())
       .then(data => setUser(data))
       .catch(setUser([]))
-
-      console.log(user);
-  
 }
 
   const handleClick = (target) => {
@@ -35,12 +32,12 @@ export const Body = () => {
 
 
   return (
-    <div className="flex flex-col gap-6 w-full">
+    <div className="flex flex-col gap-6 w-full h-full md:h-[481px]">
       <section>
         <Search callbackFn={handleClick}/>
       </section>
 
-      <section>
+      <section className="h-full">
         <UserContainer user={user}/>
       </section>
     </div>
