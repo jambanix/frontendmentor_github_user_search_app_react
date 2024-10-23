@@ -10,7 +10,7 @@ export const UserContainer = ({ user }) => {
 
   return (
     <div
-      className={`w-full h-full rounded-lg p-6 md:p-8 gap-8 ${
+      className={`w-full shadow-lg h-full rounded-lg p-6 md:p-8 gap-8 ${
         theme === "dark" ? "bg-dark-body" : "bg-light-body"
       }`}
     >
