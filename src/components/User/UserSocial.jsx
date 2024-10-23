@@ -9,7 +9,7 @@ export const UserSocial = ({type, data}) => {
     return (
         <div className="flex gap-4">
             <IconType/>
-            <p className={`${theme === "dark" ? "text-ivory": "text-black"}`}>{data}</p>
+            <p className={`${theme === "dark" ? "text-ivory": "text-black"}`}>{data ? (type === "website" ? <a href={data}>{data}</a> : data): "Not available"}</p>
         </div>
     )
 }

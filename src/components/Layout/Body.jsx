@@ -1,12 +1,13 @@
 import { Search } from "../Search";
 import { UserContainer } from "../User/UserContainer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Body = () => {
   const API_BASE = "  https://api.github.com/users";
   const API_KEY = import.meta.env.VITE_API_KEY;
 
   const [user, setUser] = useState([]);
+  const [error, setError] = useState(false);
 
   const apiRequest = (username) => {
     const URL = `${API_BASE}/${username}`;
@@ -20,8 +21,16 @@ export const Body = () => {
     fetch(URL, headers)
       .then((response) => response.json())
       .then((data) => {
-        let date = new Date(data.created_at);
-        date = date.toLocaleDateString("en-GB");
+        let date;
+        try {
+          date = new Date(data.created_at);
+          date = date.toLocaleDateString("en-GB");
+        }
+        catch {
+          date = null
+        }
+        
+        data.status === "404" ? setError(true) : setError(false);
         setUser(({...data, created_at: date}));
       })
       .catch(setUser([]));
@@ -34,7 +43,7 @@ export const Body = () => {
   return (
     <div className="flex flex-col gap-6 w-full md:h-[481px]">
       <section>
-        <Search callbackFn={handleClick} />
+        <Search callbackFn={handleClick} error={error}/>
       </section>
 
       <section className="h-full">

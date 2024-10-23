@@ -13,7 +13,8 @@ export default {
       "light-body": "#fefefe",
       "blue": "#0079ff",
       "light-blue": "#5da9fc",
-      "ivory": "#f6f8ff"
+      "ivory": "#f6f8ff",
+      "grey": "#697c9a"
     }
    }
   },
