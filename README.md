@@ -1,4 +1,4 @@
-# Frontend Mentor - Product List with Cart
+# Github User Search app
 
 This is a solution to the [Github User Search app](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
