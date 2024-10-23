@@ -1,15 +1,22 @@
-import { Icon } from "../Icons/Icon"
+import { Icon } from "../Icons/Icon";
 import { useTheme } from "../../context/ThemeProvider";
 
-export const UserSocial = ({type, data}) => {
+export const UserSocial = ({ type, data }) => {
+  
+  const { theme } = useTheme();
+  const available = () => data ? true : false;
+  const IconType = () => <Icon iconType={type} available={available()}/>;
 
-    const IconType = () => <Icon iconType={type} />
-    const {theme} = useTheme();
-
-    return (
-        <div className="flex gap-4">
-            <IconType/>
-            <p className={`${theme === "dark" ? "text-ivory": "text-black"}`}>{data ? (type === "website" ? <a href={data}>{data}</a> : data): "Not available"}</p>
-        </div>
-    )
-}
+  return (
+    <div className="flex gap-4">
+      <IconType />
+      {available()? (
+        <p className={`text-sm ${theme === "dark" ? "text-ivory" : "text-black"}`}>
+          {type === "website" ? <a className="hover:underline" href={data}>{data}</a> : data}
+        </p>
+      ) : (
+        <p className="text-sm text-grey opacity-50">Not available</p>
+      )}
+    </div>
+  );
+};

@@ -6,7 +6,7 @@ export const UserContainer = ({ user }) => {
   const { theme } = useTheme();
 
   const createdAt = (data) => (data ? `Joined ${data}` : "");
-  const username = (data) => (data ? `@ ${data}` : "");
+  const username = (data) => (data ? `@${data}` : "");
 
   return (
     <div
@@ -20,7 +20,7 @@ export const UserContainer = ({ user }) => {
         <article className="sm:col-start-2 grid grid-cols-1 sm:grid-cols-2]">
           <div>
             <h1
-              className={`${
+              className={`text-2xl font-extrabold ${
                 theme === "dark" ? "text-white" : "text-black"
               } col-start-1`}
             >
@@ -42,10 +42,10 @@ export const UserContainer = ({ user }) => {
 
           {/* Statistics */}
           <article
-            className={`flex flex-cols justify-around py-4 px-8 rounded-xl ${
+            className={`flex flex-cols justify-around p-4 rounded-xl [&_.heading]:text-sm [&_.stat]:font-bold [&_.stat]:text-2xl ${
               theme === "dark"
                 ? "bg-dark-main [&_.stat]:text-white [&_.heading]:text-ivory "
-                : "bg-light-main [&_.heading]:text-black"
+                : "bg-light-main [&_.heading]:text-grey"
             } `}
           >
             <div className="flex-col">

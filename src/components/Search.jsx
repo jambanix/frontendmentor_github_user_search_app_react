@@ -24,10 +24,10 @@ export const Search = ({callbackFn, error=false}) => {
 
     return (
         <div className="flex relative items-center">
-            <input type="text" placeholder="Search Github Username" onKeyDown={(e) => handleEnterKey(e)}onChange={(e) => handleChange(e)} className={`basis-full w-full rounded-lg px-16 py-5 ${theme === "dark" ? "bg-dark-body text-ivory" : "bg-light-body text-grey"}`}/>
+            <input type="text" placeholder="Search Github username..." onKeyDown={(e) => handleEnterKey(e)}onChange={(e) => handleChange(e)} className={`basis-full w-full rounded-lg px-16 py-5 ${theme === "dark" ? "bg-dark-body text-ivory" : "bg-light-body text-grey"}`}/>
             <Icon containerClassName="absolute left-6" iconType="search"/>
-            <p className={`absolute right-28 transition-opacity text-red-500 ${error ? "visible opacity-100" : "invisible opacity-0"}`}>No results</p>
-            <Button className="absolute right-2 bg-blue py-3 px-6 text-white hover:bg-light-blue" onClick={handleClick}>Search</Button>
+            <p className={`absolute right-32 transition-opacity text-red-500 ${error ? "visible opacity-100" : "invisible opacity-0"}`}>No results</p>
+            <Button className="font-bold absolute right-2 bg-blue py-3 px-6 text-white hover:bg-light-blue" onClick={handleClick}>Search</Button>
         </div>
     )
 }

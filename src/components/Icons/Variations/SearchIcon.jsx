@@ -1,4 +1,4 @@
-export const SearchIcon = ({containerClassName}) => {
+export const SearchIcon = ({containerClassName, fill}) => {
 
   return (
     <div className={containerClassName}>

@@ -24,24 +24,29 @@ export const Body = () => {
         let date;
         try {
           date = new Date(data.created_at);
-          date = date.toLocaleDateString("en-GB");
+          date = date.toLocaleDateString("default", {day: "2-digit", month: "long", year: "numeric"});
         }
         catch {
           date = null
         }
         
+        date === "Invalid Date" ? date = null : null;
         data.status === "404" ? setError(true) : setError(false);
         setUser(({...data, created_at: date}));
       })
       .catch(setUser([]));
   };
 
+  useEffect(() => {
+    apiRequest("jambanix");
+  }, [])
+
   const handleClick = (target) => {
     apiRequest(target);
   };
 
   return (
-    <div className="flex flex-col gap-6 w-full md:h-[481px]">
+    <div className="flex flex-col gap-4 w-full md:h-[481px]">
       <section>
         <Search callbackFn={handleClick} error={error}/>
       </section>
